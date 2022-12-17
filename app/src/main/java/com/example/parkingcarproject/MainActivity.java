@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
                 finish();
             }
-        },6000);
+        },10000);
     }
     private void setup(){
         imgv=findViewById(R.id.car);
