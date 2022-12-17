@@ -9,10 +9,12 @@ import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
     private ImageView imgv;
-    private Animation bottom;
+    private Animation bottom,top;
+    private TextView txtv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,8 +33,11 @@ public class MainActivity extends AppCompatActivity {
         },10000);
     }
     private void setup(){
+        txtv=findViewById(R.id.textView);
         imgv=findViewById(R.id.car);
         bottom= AnimationUtils.loadAnimation(this,R.anim.buttom_animation);
+        top= AnimationUtils.loadAnimation(this,R.anim.top_animation);
         imgv.setAnimation(bottom);
+        txtv.setAnimation(top);
     }
 }

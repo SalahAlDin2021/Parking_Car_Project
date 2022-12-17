@@ -32,4 +32,17 @@
         app:layout_constraintVertical_bias="0.434"
         app:srcCompat="@drawable/car" />
 
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="390dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="10dp"
+        android:text="@string/reserve_a_place_for_your_car_by_your_phone"
+        android:textColor="#FFFFFF"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toTopOf="@+id/car"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
