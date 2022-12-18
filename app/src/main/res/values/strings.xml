@@ -5,4 +5,9 @@
     <string name="alert_message">Are you sure you want to turn off this app ?</string>
     <string name="button_1">Button 1</string>
     <string name="forgot_password">Forgot password ?</string>
+    <string name="aboutDetails">
+        SalahAldin DarAlDeek-1192404
+        Mohammad Saleh-1190023
+        Basil Assi-1192308
+    </string>
 </resources>
