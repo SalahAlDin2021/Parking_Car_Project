@@ -2,20 +2,20 @@ package com.example.parkingcarproject.model;
 
 public class User {
 
-    private String userName ;
+    private String email ;
     private String password ;
 
-    public User(String userName, String password) {
-        this.userName = userName;
+    public User(String email, String password) {
+        this.email = email;
         this.password = password;
     }
 
-    public String getUserName() {
-        return userName;
+    public String getEmail() {
+        return email;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getPassword() {
@@ -29,7 +29,7 @@ public class User {
     @Override
     public String toString() {
         return "User{" +
-                "userName='" + userName + '\'' +
+                "userName='" + email + '\'' +
                 ", password='" + password + '\'' +
                 '}';
     }
