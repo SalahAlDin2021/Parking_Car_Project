@@ -48,20 +48,24 @@
 
         <RelativeLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:background="#373030"
+            android:backgroundTint="#373030">
 
             <ImageButton
                 android:id="@+id/button_icon"
                 android:layout_width="89dp"
                 android:layout_height="66dp"
                 android:layout_toLeftOf="@id/button_text"
-                android:background="@null"
+                android:background="#373030"
+                android:backgroundTint="#373030"
                 android:src="@drawable/home" />
             <Button
                 android:id="@+id/button_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/rounded_corner"
+                android:background="#373030"
+                android:backgroundTint="#373030"
                 android:textColor="#ffffff"
                 android:textSize="20sp"
                 android:padding="16dp"
