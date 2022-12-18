@@ -11,7 +11,7 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 
-public class MenuActivity extends AppCompatActivity implements View.OnClickListener {
+public class MenuActivity extends AppCompatActivity{
 
     Button user, admin;
     @Override
@@ -22,24 +22,23 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
 
         user = findViewById(R.id.userButtonID);
         admin = findViewById(R.id.adminButtonID);
+        user.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent it = new Intent(MenuActivity.this, LoginScreenActivity.class);
+                it.putExtra("type","user");
+                startActivity(it);
 
-        user.setOnClickListener(this);
-        admin.setOnClickListener(this);
-    }
-
-    @Override
-    public void onClick(View v) {
-        if(v.getId()==R.id.userButtonID){
-            Intent it = new Intent(getApplicationContext(), LoginScreenActivity.class);
-            startActivity(it);
-        }
-
-        if(v.getId()==R.id.adminButtonID){
-//            Intent it = new Intent(getApplicationContext(), AdminLoginScreen.class);
-//            startActivity(it);
-//            overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-            Log.d("Admin", "login");
-        }
+            }
+        });
+        admin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent it = new Intent(MenuActivity.this, LoginScreenActivity.class);
+                it.putExtra("type","admin");
+                startActivity(it);
+            }
+        });
     }
 
     @Override
