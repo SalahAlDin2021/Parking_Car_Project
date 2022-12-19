@@ -104,11 +104,11 @@
                 android:id="@+id/button_icon3"
                 android:layout_width="89dp"
                 android:layout_height="66dp"
-                android:layout_toLeftOf="@id/button_text3"
+                android:layout_toLeftOf="@id/find_alot"
                 android:background="@null"
                 android:src="@drawable/locationicon" />
             <Button
-                android:id="@+id/button_text3"
+                android:id="@+id/find_alot"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/rounded_corner"
