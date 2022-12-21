@@ -1,9 +1,11 @@
 package com.example.parkingcarproject.model;
 
+import com.example.parkingcarproject.Car;
+
 public class Lot {
     int id;
     boolean reserved;
-    CarDetails carReserved;
+    Car carReserved;
 
     public boolean isReserved() {
         return reserved;
@@ -13,11 +15,11 @@ public class Lot {
         this.reserved = reserved;
     }
 
-    public CarDetails getCarReserved() {
+    public Car getCarReserved() {
         return carReserved;
     }
 
-    public void setCarReserved(CarDetails carReserved) {
+    public void setCarReserved(Car carReserved) {
         this.carReserved = carReserved;
     }
 
