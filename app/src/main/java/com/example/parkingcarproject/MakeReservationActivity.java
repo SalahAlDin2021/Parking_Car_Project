@@ -3,7 +3,6 @@ package com.example.parkingcarproject;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.KeyEvent;
@@ -18,7 +17,7 @@ import com.example.parkingcarproject.model.Lot;
 import com.example.parkingcarproject.model.LotData;
 import com.example.parkingcarproject.model.UserData;
 
-public class CarInfoActivity extends AppCompatActivity {
+public class MakeReservationActivity extends AppCompatActivity {
 
     EditText edtNumberOfHours;
     TextView totalPrice;
@@ -30,7 +29,7 @@ public class CarInfoActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_car_info);
+        setContentView(R.layout.activity_make_reservation);
         setUp();
         Intent it=getIntent();
         lotID=it.getIntExtra("carid",-1);
@@ -56,11 +55,11 @@ public class CarInfoActivity extends AppCompatActivity {
         reserve.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(CarInfoActivity.this,"you are reserve Lot number: "+lotID+",with price: "+
+                Toast.makeText(MakeReservationActivity.this,"you are reserve Lot number: "+lotID+",with price: "+
                         calculatePrice(Double.parseDouble(edtNumberOfHours.getText().toString())),Toast.LENGTH_LONG).show();
                 UserData.findUser(userId).addLot(LotData.search_lot(lotID));
                 LotData.lots.get(lotID).setReserved(UserData.findUser(userId),Double.parseDouble(edtNumberOfHours.getText().toString()));
-                Intent it=new Intent(CarInfoActivity.this,UserLogedInScreenActivity.class);
+                Intent it=new Intent(MakeReservationActivity.this,UserLogedInScreenActivity.class);
                 it.putExtra("userId",userId);
                 startActivity(it);
                 finish();
