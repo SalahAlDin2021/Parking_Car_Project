@@ -8,6 +8,26 @@ public class User {
     private String email ;
     private String password ;
     private ArrayList<Lot> lots=new ArrayList<>();
+    private double payAmount;
+
+    public ArrayList<Lot> getLots() {
+        return lots;
+    }
+
+    public void setLots(ArrayList<Lot> lots) {
+        this.lots = lots;
+    }
+
+    public double getPayAmount() {
+        return payAmount;
+    }
+    public void addPayAmount(double payAmount) {
+        this.payAmount =+ payAmount;
+    }
+
+    public void setPayAmount(double payAmount) {
+        this.payAmount = payAmount;
+    }
 
     public int getId() {
         return id;

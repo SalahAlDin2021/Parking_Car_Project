@@ -1,215 +1,227 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.drawerlayout.widget.DrawerLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:gravity="center">
+        android:layout_height="match_parent">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="240dp">
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical">
 
-            <ImageView
-                android:id="@+id/image_view"
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="304dp"
-                android:background="@drawable/parked_car"
-                android:src="@drawable/needarest"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                android:layout_height="240dp">
 
-            <TextView
-                android:id="@+id/textView2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="monospace"
-                android:gravity="center_horizontal"
-                android:text="I need a rest"
-                android:textColor="#03E0FD"
-                android:textSize="38sp"
-                android:textStyle="bold|italic"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.992" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
+                <ImageView
+                    android:id="@+id/image_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="304dp"
+                    android:background="@drawable/parked_car"
+                    android:src="@drawable/needarest"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="#373030"
-            android:backgroundTint="#373030">
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="monospace"
+                    android:gravity="center_horizontal"
+                    android:text="I need a rest"
+                    android:textColor="#03E0FD"
+                    android:textSize="38sp"
+                    android:textStyle="bold|italic"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.992" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <ImageButton
-                android:id="@+id/button_icon"
-                android:layout_width="89dp"
-                android:layout_height="66dp"
-                android:layout_toLeftOf="@id/button_text"
-                android:background="#373030"
-                android:backgroundTint="#373030"
-                android:src="@drawable/home" />
-            <Button
-                android:id="@+id/button_text"
-                android:layout_width="match_parent"
+            <RelativeLayout
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="#373030"
-                android:backgroundTint="#373030"
-                android:textColor="#ffffff"
-                android:textSize="20sp"
-                android:padding="16dp"
-                android:elevation="4dp"
-                android:text="Home" />
-        </RelativeLayout>
+                android:backgroundTint="#373030">
 
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+                <ImageButton
+                    android:id="@+id/button_icon"
+                    android:layout_width="89dp"
+                    android:layout_height="66dp"
+                    android:layout_toLeftOf="@id/button_text"
+                    android:background="#373030"
+                    android:backgroundTint="#373030"
+                    android:src="@drawable/home" />
 
-            <ImageButton
-                android:id="@+id/button_icon2"
-                android:layout_width="89dp"
-                android:layout_height="66dp"
-                android:layout_toLeftOf="@id/button_text2"
-                android:background="@null"
-                android:src="@drawable/personicon" />
-            <Button
-                android:id="@+id/button_text2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/rounded_corner"
-                android:textColor="#ffffff"
-                android:textSize="20sp"
-                android:padding="16dp"
-                android:elevation="4dp"
-                android:text="Profile" />
-        </RelativeLayout>
+                <Button
+                    android:id="@+id/button_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#373030"
+                    android:backgroundTint="#373030"
+                    android:elevation="4dp"
+                    android:padding="16dp"
+                    android:text="Home"
+                    android:textColor="#ffffff"
+                    android:textSize="20sp" />
+            </RelativeLayout>
 
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
 
-            <ImageButton
-                android:id="@+id/button_icon3"
-                android:layout_width="89dp"
-                android:layout_height="66dp"
-                android:layout_toLeftOf="@id/find_alot"
-                android:background="@null"
-                android:src="@drawable/locationicon" />
-            <Button
-                android:id="@+id/find_alot"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/rounded_corner"
-                android:textColor="#ffffff"
-                android:textSize="20sp"
-                android:padding="16dp"
-                android:elevation="4dp"
-                android:text="Find A lot" />
-        </RelativeLayout>
+                <ImageButton
+                    android:id="@+id/button_icon2"
+                    android:layout_width="89dp"
+                    android:layout_height="66dp"
+                    android:layout_toLeftOf="@id/button_text2"
+                    android:background="@null"
+                    android:src="@drawable/personicon" />
 
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+                <Button
+                    android:id="@+id/button_text2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/rounded_corner"
+                    android:elevation="4dp"
+                    android:padding="16dp"
+                    android:text="Profile"
+                    android:textColor="#ffffff"
+                    android:textSize="20sp" />
+            </RelativeLayout>
 
-            <ImageButton
-                android:id="@+id/button_icon4"
-                android:layout_width="89dp"
-                android:layout_height="66dp"
-                android:layout_toLeftOf="@id/button_text4"
-                android:background="@null"
-                android:src="@drawable/abouticon" />
-            <Button
-                android:id="@+id/button_text4"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/rounded_corner"
-                android:textColor="#ffffff"
-                android:textSize="20sp"
-                android:padding="16dp"
-                android:elevation="4dp"
-                android:text="About" />
-        </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
 
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+                <ImageButton
+                    android:id="@+id/button_icon3"
+                    android:layout_width="89dp"
+                    android:layout_height="66dp"
+                    android:layout_toLeftOf="@id/find_alot"
+                    android:background="@null"
+                    android:src="@drawable/locationicon" />
 
-            <ImageButton
-                android:id="@+id/button_icon5"
-                android:layout_width="89dp"
-                android:layout_height="66dp"
-                android:layout_toLeftOf="@id/button_text5"
-                android:background="@null"
-                android:src="@drawable/bookicon" />
-            <Button
-                android:id="@+id/button_text5"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/rounded_corner"
-                android:textColor="#ffffff"
-                android:textSize="20sp"
-                android:padding="16dp"
-                android:elevation="4dp"
-                android:text="Reserved Lot Details" />
-        </RelativeLayout>
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+                <Button
+                    android:id="@+id/find_alot"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/rounded_corner"
+                    android:elevation="4dp"
+                    android:padding="16dp"
+                    android:text="Find A lot"
+                    android:textColor="#ffffff"
+                    android:textSize="20sp" />
+            </RelativeLayout>
 
-            <ImageButton
-                android:id="@+id/button_icon6"
-                android:layout_width="89dp"
-                android:layout_height="66dp"
-                android:layout_toLeftOf="@id/button_text6"
-                android:background="@null"
-                android:src="@drawable/payicon" />
-            <Button
-                android:id="@+id/button_text6"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/rounded_corner"
-                android:textColor="#ffffff"
-                android:textSize="20sp"
-                android:padding="16dp"
-                android:elevation="4dp"
-                android:text="Payment Details" />
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
 
-        </RelativeLayout>
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+                <ImageButton
+                    android:id="@+id/button_icon4"
+                    android:layout_width="89dp"
+                    android:layout_height="66dp"
+                    android:layout_toLeftOf="@id/button_text4"
+                    android:background="@null"
+                    android:src="@drawable/abouticon" />
 
-            <ImageButton
-                android:id="@+id/button_icon7"
-                android:layout_width="89dp"
-                android:layout_height="66dp"
-                android:layout_toLeftOf="@id/button_text7"
-                android:background="@null"
-                android:src="@drawable/reviewicon" />
-            <Button
-                android:id="@+id/button_text7"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/rounded_corner"
-                android:textColor="#ffffff"
-                android:textSize="20sp"
-                android:padding="16dp"
-                android:elevation="4dp"
-                android:text="Feedback" />
-        </RelativeLayout>
+                <Button
+                    android:id="@+id/button_text4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/rounded_corner"
+                    android:elevation="4dp"
+                    android:padding="16dp"
+                    android:text="About"
+                    android:textColor="#ffffff"
+                    android:textSize="20sp" />
+            </RelativeLayout>
 
-    </LinearLayout>
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
 
+                <ImageButton
+                    android:id="@+id/button_icon5"
+                    android:layout_width="89dp"
+                    android:layout_height="66dp"
+                    android:layout_toLeftOf="@id/button_text5"
+                    android:background="@null"
+                    android:src="@drawable/bookicon" />
+
+                <Button
+                    android:id="@+id/button_text5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/rounded_corner"
+                    android:elevation="4dp"
+                    android:padding="16dp"
+                    android:text="Reserved Lot Details"
+                    android:textColor="#ffffff"
+                    android:textSize="20sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageButton
+                    android:id="@+id/button_icon6"
+                    android:layout_width="89dp"
+                    android:layout_height="66dp"
+                    android:layout_toLeftOf="@id/button_text6"
+                    android:background="@null"
+                    android:src="@drawable/payicon" />
+
+                <Button
+                    android:id="@+id/button_text6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/rounded_corner"
+                    android:elevation="4dp"
+                    android:padding="16dp"
+                    android:text="Payment Details"
+                    android:textColor="#ffffff"
+                    android:textSize="20sp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageButton
+                    android:id="@+id/button_icon7"
+                    android:layout_width="89dp"
+                    android:layout_height="66dp"
+                    android:layout_toLeftOf="@id/button_text7"
+                    android:background="@null"
+                    android:src="@drawable/reviewicon" />
+
+                <Button
+                    android:id="@+id/button_text7"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/rounded_corner"
+                    android:elevation="4dp"
+                    android:padding="16dp"
+                    android:text="Feedback"
+                    android:textColor="#ffffff"
+                    android:textSize="20sp" />
+            </RelativeLayout>
+
+        </LinearLayout>
+    </ScrollView>
 </androidx.drawerlayout.widget.DrawerLayout>
