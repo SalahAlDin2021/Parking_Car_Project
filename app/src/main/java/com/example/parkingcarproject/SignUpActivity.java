@@ -2,6 +2,7 @@ package com.example.parkingcarproject;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Patterns;
 import android.view.Gravity;
@@ -10,6 +11,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
+
+import com.example.parkingcarproject.model.LotData;
+import com.example.parkingcarproject.model.User;
+import com.example.parkingcarproject.model.UserData;
 
 public class SignUpActivity extends AppCompatActivity {
     Button signinPage;
@@ -65,7 +70,13 @@ public class SignUpActivity extends AppCompatActivity {
                 }
 
                 if ((Password.length() >= 8) && (Password.matches(ConfirmPassword))) {
-                    //add the user to database, which will implemented in phase2
+                    UserData.users.add(new User(Email,Password));
+                    Toast toast = Toast.makeText(SignUpActivity.this, "Login successful", Toast.LENGTH_LONG);
+                    toast.show();
+                    Intent it = new Intent(SignUpActivity.this, UserLogedInScreenActivity.class);
+                    it.putExtra("id",UserData.findUser(Email,Password));
+                    startActivity(it);
+                    finish();
 
                 }else {
                     Toast toast = Toast.makeText(SignUpActivity.this, "Password did not match", Toast.LENGTH_LONG);

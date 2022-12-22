@@ -6,7 +6,7 @@ import java.util.List;
 public class UserData {
 
 
-    private static List<User> users=new ArrayList<>();
+    public static List<User> users=new ArrayList<>();
 
 
     public UserData() {
