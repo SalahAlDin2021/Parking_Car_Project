@@ -11,6 +11,9 @@ import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.parkingcarproject.model.LotData;
+import com.example.parkingcarproject.model.UserData;
+
 public class MainActivity extends AppCompatActivity {
     private ImageView imgv;
     private Animation bottom,top;
@@ -33,6 +36,8 @@ public class MainActivity extends AppCompatActivity {
         },10000);
     }
     private void setup(){
+        UserData u=new UserData();
+        LotData L=new LotData();
         txtv=findViewById(R.id.textView);
         imgv=findViewById(R.id.car);
         bottom= AnimationUtils.loadAnimation(this,R.anim.buttom_animation);

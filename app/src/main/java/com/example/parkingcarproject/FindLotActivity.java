@@ -4,22 +4,17 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.graphics.drawable.Drawable;
-
+import android.content.Intent;
 import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.TextView;
+import android.util.Log;
 
 
-import androidx.cardview.widget.CardView;
-import androidx.core.content.ContextCompat;
-
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.parkingcarproject.model.Lot;
+import com.example.parkingcarproject.model.LotData;
+
+import java.util.ArrayList;
 
 
 public class FindLotActivity extends AppCompatActivity {
@@ -30,16 +25,17 @@ public class FindLotActivity extends AppCompatActivity {
         setContentView(R.layout.activity_find_lot);
 
         RecyclerView recycler = (RecyclerView)findViewById(R.id.my_recycler_view);
+        Intent it=getIntent();
+        int userId=it.getIntExtra("userId",-1);
 
-        String[] captions = new String[Car.cars.length];
-        int[] ids = new int[Car.cars.length];
+        Log.d("iddd","findAlotActivity:"+userId);
 
-        for(int i = 0; i<captions.length;i++){
-            captions[i] = Car.cars[i].getName();
-            ids[i] = Car.cars[i].getImageID();
-        }
+        ArrayList<Lot> lots =LotData.lots;
+
+
+
         recycler.setLayoutManager(new LinearLayoutManager(this));
-        CaptionedImagesAdapter adapter = new CaptionedImagesAdapter(captions, ids);
+        CaptionedImagesAdapter adapter = new CaptionedImagesAdapter(this,lots,userId);
         recycler.setAdapter(adapter);
     }
 }

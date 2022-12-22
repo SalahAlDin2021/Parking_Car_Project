@@ -20,6 +20,8 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.parkingcarproject.model.UserData;
+
 public class LoginScreenActivity extends AppCompatActivity{
 
     Button signupPage, forgetPassButton;
@@ -72,19 +74,19 @@ public class LoginScreenActivity extends AppCompatActivity{
                 }else{
                     //check email and password and change the activity to another activity if email and password matches
                     //at this moment will do this in bojo class
-                    if(emailobj.equals("email@s.d") && passobj.equals("pass") && type.equals("user")){
+                    if(UserData.findUser(emailobj,passobj)>0 && type.equals("user")){
                         Toast toast = Toast.makeText(LoginScreenActivity.this, "Login successful", Toast.LENGTH_LONG);
                         toast.show();
                         Intent it = new Intent(LoginScreenActivity.this, UserLogedInScreenActivity.class);
-                        it.putExtra("id",emailobj+","+passobj);
+                        it.putExtra("id",UserData.findUser(emailobj,passobj));
                         startActivity(it);
                         finish();
 
-                    }else if(emailobj.equals("adminemail@s.d") && passobj.equals("adminpass") && type.equals("admin")){
+                    }else if(UserData.findUser(emailobj,passobj)>0 && type.equals("admin")){
                         Toast toast = Toast.makeText(LoginScreenActivity.this, "Login successful", Toast.LENGTH_LONG);
                         toast.show();
                         Intent it = new Intent(LoginScreenActivity.this, AdminLogedInScreenActivity.class);
-                        it.putExtra("id",emailobj+","+passobj);
+                        it.putExtra("id",UserData.findUser(emailobj,passobj));
                         startActivity(it);
                         finish();
                     }else{
