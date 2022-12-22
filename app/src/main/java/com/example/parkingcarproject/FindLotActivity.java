@@ -31,9 +31,9 @@ public class FindLotActivity extends AppCompatActivity {
         Log.d("iddd","findAlotActivity:"+userId);
 
         ArrayList<Lot> lots =LotData.lots;
-
-
-
+        for(Lot lot:lots){
+            lot.checkifEnd();
+        }
         recycler.setLayoutManager(new LinearLayoutManager(this));
         CaptionedImagesAdapter adapter = new CaptionedImagesAdapter(this,lots,userId);
         recycler.setAdapter(adapter);

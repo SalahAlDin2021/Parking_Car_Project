@@ -67,7 +67,7 @@ public class CaptionedImagesAdapter
                 }else{
 
                     Log.d("iddd","adapter:"+lots.get(pos)+",,,"+userId);
-                    Intent it=new Intent(context,CarInfoActivity.class);
+                    Intent it=new Intent(context,MakeReservationActivity.class);
                     it.putExtra("lotId",lots.get(pos).getId());
                     it.putExtra("userId",userId);
                     context.startActivity(it);

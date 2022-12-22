@@ -1,6 +1,7 @@
 package com.example.parkingcarproject.model;
 
 import java.util.Calendar;
+import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.concurrent.TimeUnit;
 
@@ -10,7 +11,7 @@ public class Lot {
     boolean reserved;
     User userReserved;
     double dueration;
-    double start;
+    long start;
     double price;
 
 
@@ -41,7 +42,7 @@ public class Lot {
         return dueration;
     }
 
-    public double getStart() {
+    public long getStart() {
         return start;
     }
 
@@ -51,12 +52,21 @@ public class Lot {
 
     public void setReserved(User user, double dueration) {
         this.reserved = true;
-        Calendar dt= GregorianCalendar.getInstance();
-        this.start= dt.HOUR_OF_DAY+dt.MINUTE/60;
+        Date date=new Date();
+        this.start= date.getTime();
         this.dueration=dueration;
         this.userReserved=user;
         this.price=dueration*PRICE_PER_HOUR;
 
+    }
+    public void checkifEnd(){
+        if(reserved){
+            Date date =new Date();
+            long time= date.getTime();
+            if(time-start>=dueration*60*60*1000){
+                reserved=false;
+            }
+        }
     }
 
     public User getCarReserved() {
