@@ -47,7 +47,7 @@ public class CaptionedImagesAdapter
 
 
 
-        if(lots.get(position).isReserved()) {
+        if(!lots.get(position).isReserved()) {
             holder.txtStatus.setText("Status: " +AVAILABLE);
             holder.txtStatus.setTextColor(Color.GREEN);
         }else {
@@ -59,7 +59,7 @@ public class CaptionedImagesAdapter
         holder.cardView.setOnClickListener( new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                if(!lots.get(pos).isReserved()){
+                if(lots.get(pos).isReserved()){
                     Toast.makeText(context,"Sorry, This Lot has been Reserved" ,Toast.LENGTH_LONG).show();
                 }else{
                     Intent it=new Intent(context,MakeReservationActivity.class);

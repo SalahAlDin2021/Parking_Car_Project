@@ -15,6 +15,7 @@ import android.widget.Toast;
 
 import com.example.parkingcarproject.model.Lot;
 import com.example.parkingcarproject.model.LotData;
+import com.example.parkingcarproject.model.User;
 import com.example.parkingcarproject.model.UserData;
 
 public class MakeReservationActivity extends AppCompatActivity {
@@ -55,8 +56,10 @@ public class MakeReservationActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Toast.makeText(MakeReservationActivity.this,"you are reserve Lot number: "+lotID+",with price: "+
                         calculatePrice(Double.parseDouble(edtNumberOfHours.getText().toString())),Toast.LENGTH_LONG).show();
-                UserData.findUser(Integer.parseInt(MainActivity.id)).addLot(LotData.search_lot(lotID));
-                LotData.lots.get(lotID).setReserved(UserData.findUser(Integer.parseInt(MainActivity.id)),Double.parseDouble(edtNumberOfHours.getText().toString()));
+                User user =UserData.findUser(Integer.parseInt(MainActivity.id));
+                Lot lot=LotData.search_lot(lotID);
+                lot.setReserved(user,Double.parseDouble(edtNumberOfHours.getText().toString()));
+                user.addLot(lot);
                 Intent it=new Intent(MakeReservationActivity.this,UserLogedInScreenActivity.class);
                 startActivity(it);
                 finish();

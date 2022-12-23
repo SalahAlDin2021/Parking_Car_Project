@@ -77,4 +77,15 @@ public class Lot {
         this.userReserved = userReserved;
     }
 
+    @Override
+    public String toString() {
+        return "Lot{" +
+                "id=" + id +
+                ", reserved=" + reserved +
+                ", userReserved=" + userReserved +
+                ", dueration=" + dueration +
+                ", start=" + start +
+                ", price=" + price +
+                '}';
+    }
 }

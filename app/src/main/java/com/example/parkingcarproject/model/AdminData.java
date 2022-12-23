@@ -1,5 +1,7 @@
 package com.example.parkingcarproject.model;
 
+import android.util.Log;
+
 import java.util.ArrayList;
 
 public class AdminData {
@@ -19,7 +21,7 @@ public class AdminData {
 
     public static int findUser(String email , String password){
         for(Admin admin : admins) {
-            if (admin.getEmail().equals(email) && admin.getPassword().equals(password)) {
+            if (admin.getEmail().equals(email.trim()) && admin.getPassword().equals(password.trim())) {
                 return admin.getId();
             }
         }
