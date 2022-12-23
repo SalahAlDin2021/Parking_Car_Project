@@ -16,6 +16,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.parkingcarproject.model.AdminData;
 import com.example.parkingcarproject.model.UserData;
 
 public class LoginScreenActivity extends AppCompatActivity{
@@ -78,7 +79,12 @@ public class LoginScreenActivity extends AppCompatActivity{
                     usernameEmail.requestFocus();
                     return;
                 }else{
-                    int id=UserData.findUser(emailobj,passobj);
+                    int id=0;
+                    if(type.equals("user")){
+                        id=UserData.findUser(emailobj,passobj);
+                    }else{
+                        id= AdminData.findUser(emailobj,passobj);
+                    }
                     //check email and password and change the activity to another activity if email and password matches
                     //at this moment will do this in bojo class
                     if(id>0 && type.equals("user")){
