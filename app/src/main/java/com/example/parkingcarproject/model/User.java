@@ -3,6 +3,7 @@ package com.example.parkingcarproject.model;
 import java.util.ArrayList;
 
 public class User {
+    private String username;
     private static int count =1;
     private int id;
     private String email ;
@@ -33,12 +34,21 @@ public class User {
         return id;
     }
 
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
     public void setId(int id) {
         this.id = id;
     }
 
-    public User(String email, String password) {
+    public User(String username,String email, String password) {
         id=count++;
+        this.username=username;
         this.email = email;
         this.password = password;
     }
@@ -60,6 +70,13 @@ public class User {
     }
     public void addLot(Lot lot){
         lots.add(lot);
+    }
+    public double calculate_price_of_lots(){
+        double amount=0.0;
+        for(Lot lot:lots){
+            amount+=lot.price;
+        }
+        return amount;
     }
 
     @Override

@@ -18,24 +18,20 @@ import java.util.ArrayList;
 
 
 public class FindLotActivity extends AppCompatActivity {
-
+    RecyclerView recycler;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_find_lot);
 
-        RecyclerView recycler = (RecyclerView)findViewById(R.id.my_recycler_view);
-        Intent it=getIntent();
-        int userId=it.getIntExtra("userId",-1);
-
-        Log.d("iddd","findAlotActivity:"+userId);
+        recycler = (RecyclerView)findViewById(R.id.my_recycler_view);
 
         ArrayList<Lot> lots =LotData.lots;
         for(Lot lot:lots){
             lot.checkifEnd();
         }
         recycler.setLayoutManager(new LinearLayoutManager(this));
-        CaptionedImagesAdapter adapter = new CaptionedImagesAdapter(this,lots,userId);
+        CaptionedImagesAdapter adapter = new CaptionedImagesAdapter(this,lots);
         recycler.setAdapter(adapter);
     }
 }

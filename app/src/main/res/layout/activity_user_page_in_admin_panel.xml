@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="20dp"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ID"
+            android:layout_marginHorizontal="30sp"
+            android:textSize="26sp"
+            android:textStyle="bold" />
+        <TextView
+            android:id="@+id/txt_user_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="30sp"
+            android:text="salah"
+            android:textSize="26sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="20dp"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="30sp"
+            android:text="UserName"
+            android:textSize="26sp"
+            android:textStyle="bold" />
+        <EditText
+            android:id="@+id/edt_user_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="30sp"
+            android:text="salah"
+            android:textSize="26sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="20dp"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="30sp"
+            android:text="Email"
+            android:textSize="26sp"
+            android:textStyle="bold" />
+        <EditText
+            android:id="@+id/edt_user_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="30sp"
+            android:text="salah"
+            android:textSize="26sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="20dp"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="30sp"
+            android:text="Password"
+            android:textSize="26sp"
+            android:textStyle="bold" />
+        <EditText
+            android:id="@+id/edt_user_password"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="30sp"
+            android:text="salah"
+            android:textSize="26sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="20dp"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="30sp"
+            android:text="amount to be paid"
+            android:textSize="26sp"
+            android:textStyle="bold" />
+        <TextView
+            android:id="@+id/txt_user_amount_to_be_paid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="30sp"
+            android:text="salah"
+            android:textSize="26sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="20dp"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="30sp"
+            android:text="Pay amount"
+            android:textSize="26sp"
+            android:textStyle="bold" />
+        <EditText
+            android:id="@+id/edt_user_pay_amount"
+            android:inputType="number"
+            android:layout_width="150sp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="30sp"
+            android:textSize="26sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+    <Button
+        android:id="@+id/btn_edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="20dp"
+        android:textSize="35sp"
+        android:text="Edit"></Button>
+
+
+</LinearLayout>

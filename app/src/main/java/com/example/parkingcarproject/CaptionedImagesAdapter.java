@@ -24,15 +24,12 @@ public class CaptionedImagesAdapter
         extends RecyclerView.Adapter<CaptionedImagesAdapter.ViewHolder>{
 
     Context context;
-    int userId;
     private ArrayList<Lot> lots;
     public static final String AVAILABLE ="Available";
     public static final String UN_AVAILABLE ="UnAvailable";
-    public CaptionedImagesAdapter(Context context, ArrayList<Lot> lots, int userId){
+    public CaptionedImagesAdapter(Context context, ArrayList<Lot> lots){
        this.lots=lots;
        this.context=context;
-       this.userId=userId;
-        Log.d("iddd","adapter:"+userId);
     }
 
     @Override
@@ -65,11 +62,8 @@ public class CaptionedImagesAdapter
                 if(!lots.get(pos).isReserved()){
                     Toast.makeText(context,"Sorry, This Lot has been Reserved" ,Toast.LENGTH_LONG).show();
                 }else{
-
-                    Log.d("iddd","adapter:"+lots.get(pos)+",,,"+userId);
                     Intent it=new Intent(context,MakeReservationActivity.class);
-                    it.putExtra("lotId",lots.get(pos).getId());
-                    it.putExtra("userId",userId);
+                    it.putExtra("lotid",lots.get(pos).getId());
                     context.startActivity(it);
                 }
             }

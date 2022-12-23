@@ -70,7 +70,7 @@ public class SignUpActivity extends AppCompatActivity {
                 }
 
                 if ((Password.length() >= 8) && (Password.matches(ConfirmPassword))) {
-                    UserData.users.add(new User(Email,Password));
+                    UserData.users.add(new User(Username,Email,Password));
                     Toast toast = Toast.makeText(SignUpActivity.this, "Login successful", Toast.LENGTH_LONG);
                     toast.show();
                     Intent it = new Intent(SignUpActivity.this, UserLogedInScreenActivity.class);

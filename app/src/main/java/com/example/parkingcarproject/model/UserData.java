@@ -6,15 +6,15 @@ import java.util.List;
 public class UserData {
 
 
-    public static List<User> users=new ArrayList<>();
+    public static ArrayList<User> users=new ArrayList<>();
 
 
     public UserData() {
-        users.add(new User("basil@gmail.com" , "12345"));
-        users.add(new User("ahmad@gmail.com" , "1234"));
-        users.add(new User("salah@gmail.com" , "12347"));
-        users.add(new User("mohammad@gmail.com" , "1234"));
-        users.add(new User("ali@gmail.com" , "1234"));
+        users.add(new User("basil","basil@gmail.com" , "12345"));
+        users.add(new User("ahmad","ahmad@gmail.com" , "1234"));
+        users.add(new User("salah","salah@gmail.com" , "12347"));
+        users.add(new User("mohammad","mohammad@gmail.com" , "1234"));
+        users.add(new User("ali","ali@gmail.com" , "1234"));
     }
 
 

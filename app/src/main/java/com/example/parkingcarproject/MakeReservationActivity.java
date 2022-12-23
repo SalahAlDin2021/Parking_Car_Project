@@ -22,7 +22,7 @@ public class MakeReservationActivity extends AppCompatActivity {
     EditText edtNumberOfHours;
     TextView totalPrice;
     Button reserve;
-    int lotID,userId;
+    int lotID;
 
 
     public static final String TOTAL_PRICE = "Total Price: ";
@@ -32,9 +32,7 @@ public class MakeReservationActivity extends AppCompatActivity {
         setContentView(R.layout.activity_make_reservation);
         setUp();
         Intent it=getIntent();
-        lotID=it.getIntExtra("carid",-1);
-        userId=it.getIntExtra("userId",-1);
-        Log.d("iddd","CarInfo:"+lotID+",,,"+userId);
+        lotID=it.getIntExtra("lotid",-1);
 
 
         edtNumberOfHours.setOnEditorActionListener(new TextView.OnEditorActionListener() {
@@ -57,10 +55,9 @@ public class MakeReservationActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Toast.makeText(MakeReservationActivity.this,"you are reserve Lot number: "+lotID+",with price: "+
                         calculatePrice(Double.parseDouble(edtNumberOfHours.getText().toString())),Toast.LENGTH_LONG).show();
-                UserData.findUser(userId).addLot(LotData.search_lot(lotID));
-                LotData.lots.get(lotID).setReserved(UserData.findUser(userId),Double.parseDouble(edtNumberOfHours.getText().toString()));
+                UserData.findUser(Integer.parseInt(MainActivity.id)).addLot(LotData.search_lot(lotID));
+                LotData.lots.get(lotID).setReserved(UserData.findUser(Integer.parseInt(MainActivity.id)),Double.parseDouble(edtNumberOfHours.getText().toString()));
                 Intent it=new Intent(MakeReservationActivity.this,UserLogedInScreenActivity.class);
-                it.putExtra("userId",userId);
                 startActivity(it);
                 finish();
             }

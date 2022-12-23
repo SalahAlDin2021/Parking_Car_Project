@@ -1,5 +1,6 @@
 package com.example.parkingcarproject;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.app.Fragment;
 import android.view.LayoutInflater;
@@ -45,14 +46,14 @@ public class FeedbackActivity extends AppCompatActivity {
 
                     if(comment.isEmpty()) {
                         feedback.setError("Fill this field");
-                    }
-
-                    else {
+                    }else {
                         selectedID = radioButtonGroup.getCheckedRadioButtonId();
                         resultRadioButton = (RadioButton) radioButtonGroup.findViewById(selectedID);
                         message = resultRadioButton.getText().toString();
                         //the code to save the user feedback to database, so will coming in phase 2
-                        feedback.setText(null);
+                        Intent it = new Intent(FeedbackActivity.this,UserLogedInScreenActivity.class);
+                        startActivity(it);
+                        finish();
                     }
                 }
             }
