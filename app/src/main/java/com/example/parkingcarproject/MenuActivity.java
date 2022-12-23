@@ -14,6 +14,7 @@ import android.widget.Button;
 public class MenuActivity extends AppCompatActivity{
 
     Button user, admin;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

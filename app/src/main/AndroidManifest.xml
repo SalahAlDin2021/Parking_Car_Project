@@ -13,7 +13,14 @@
         android:theme="@style/Theme.ParkingCarProject"
         tools:targetApi="31">
         <activity
-            android:name=".CarInfoActivity"
+            android:name=".ProfileActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".PaymentDetailsActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -34,7 +41,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".Feedback"
+            android:name=".FeedbackActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"

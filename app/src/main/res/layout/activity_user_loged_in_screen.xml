@@ -85,12 +85,12 @@
                     android:id="@+id/button_icon2"
                     android:layout_width="89dp"
                     android:layout_height="66dp"
-                    android:layout_toLeftOf="@id/button_text2"
+                    android:layout_toLeftOf="@id/btnProfile"
                     android:background="@null"
                     android:src="@drawable/personicon" />
 
                 <Button
-                    android:id="@+id/button_text2"
+                    android:id="@+id/btnProfile"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/rounded_corner"
@@ -133,12 +133,12 @@
                     android:id="@+id/button_icon4"
                     android:layout_width="89dp"
                     android:layout_height="66dp"
-                    android:layout_toLeftOf="@id/button_text4"
+                    android:layout_toLeftOf="@id/btnAbout"
                     android:background="@null"
                     android:src="@drawable/abouticon" />
 
                 <Button
-                    android:id="@+id/button_text4"
+                    android:id="@+id/btnAbout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/rounded_corner"
@@ -181,12 +181,12 @@
                     android:id="@+id/button_icon6"
                     android:layout_width="89dp"
                     android:layout_height="66dp"
-                    android:layout_toLeftOf="@id/button_text6"
+                    android:layout_toLeftOf="@id/btnPaymentDetails"
                     android:background="@null"
                     android:src="@drawable/payicon" />
 
                 <Button
-                    android:id="@+id/button_text6"
+                    android:id="@+id/btnPaymentDetails"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/rounded_corner"
@@ -206,12 +206,12 @@
                     android:id="@+id/button_icon7"
                     android:layout_width="89dp"
                     android:layout_height="66dp"
-                    android:layout_toLeftOf="@id/button_text7"
+                    android:layout_toLeftOf="@+id/btnFeedBack"
                     android:background="@null"
                     android:src="@drawable/reviewicon" />
 
                 <Button
-                    android:id="@+id/button_text7"
+                    android:id="@+id/btnFeedBack"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/rounded_corner"

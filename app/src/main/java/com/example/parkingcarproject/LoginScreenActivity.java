@@ -1,16 +1,12 @@
 package com.example.parkingcarproject;
 
-import android.app.Fragment;
-import android.app.FragmentManager;
-import android.app.FragmentTransaction;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.util.Log;
 import android.util.Patterns;
-import android.view.Gravity;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
@@ -29,6 +25,15 @@ public class LoginScreenActivity extends AppCompatActivity{
     EditText usernameEmail, password;
     String type="";
     TextView txtType;
+    private boolean savedIns = false;
+    private SharedPreferences pref;
+    private SharedPreferences.Editor editor;
+    public static final String EMAIL = "EMAIL";
+    public static final String PASSWORD = "PASSWORD";
+    public static final String ID = "ID";
+    public static final String TYPE = "TYPE";
+    public static final boolean FLAG = true;
+
 
 
 
@@ -38,6 +43,7 @@ public class LoginScreenActivity extends AppCompatActivity{
         setContentView(R.layout.activity_login_screen);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setup();
+        setUpShard();
 //        Log.d("typee",type);
         signupPage.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -72,21 +78,45 @@ public class LoginScreenActivity extends AppCompatActivity{
                     usernameEmail.requestFocus();
                     return;
                 }else{
+                    int id=UserData.findUser(emailobj,passobj);
                     //check email and password and change the activity to another activity if email and password matches
                     //at this moment will do this in bojo class
-                    if(UserData.findUser(emailobj,passobj)>0 && type.equals("user")){
+                    if(id>0 && type.equals("user")){
+                        if(!savedIns){
+                            String email = usernameEmail.getText().toString().trim();
+                            String pass = password.getText().toString().trim();
+                            if(!email.isEmpty() && !pass.isEmpty()){
+                                editor.putString(ID, id+"");
+                                editor.putString(EMAIL,email);
+                                editor.putString(PASSWORD, pass);
+                                editor.putString(TYPE, "user");
+                                editor.putBoolean("FLAG",FLAG);
+                                editor.commit();
+                            }
+                        }
                         Toast toast = Toast.makeText(LoginScreenActivity.this, "Login successful", Toast.LENGTH_LONG);
                         toast.show();
                         Intent it = new Intent(LoginScreenActivity.this, UserLogedInScreenActivity.class);
-                        it.putExtra("id",UserData.findUser(emailobj,passobj));
                         startActivity(it);
                         finish();
 
-                    }else if(UserData.findUser(emailobj,passobj)>0 && type.equals("admin")){
+                    }else if(id>0 && type.equals("admin")){
+                        if(!savedIns){
+                            String email = usernameEmail.getText().toString().trim();
+                            String pass = password.getText().toString().trim();
+
+                            if(!email.isEmpty() && !pass.isEmpty()){
+                                editor.putString(ID, UserData.findUser(emailobj,passobj)+"");
+                                editor.putString(EMAIL,email);
+                                editor.putString(PASSWORD, pass);
+                                editor.putString(TYPE, "admin");
+                                editor.putBoolean("FLAG",FLAG);
+                                editor.commit();
+                            }
+                        }
                         Toast toast = Toast.makeText(LoginScreenActivity.this, "Login successful", Toast.LENGTH_LONG);
                         toast.show();
                         Intent it = new Intent(LoginScreenActivity.this, AdminLogedInScreenActivity.class);
-                        it.putExtra("id",UserData.findUser(emailobj,passobj));
                         startActivity(it);
                         finish();
                     }else{
@@ -111,6 +141,13 @@ public class LoginScreenActivity extends AppCompatActivity{
         });
 
     }
+
+    private void setUpShard(){
+        pref = PreferenceManager.getDefaultSharedPreferences(this);
+        editor= pref.edit();
+    }
+
+
 
     void setup(){
         txtType=findViewById(R.id.type);

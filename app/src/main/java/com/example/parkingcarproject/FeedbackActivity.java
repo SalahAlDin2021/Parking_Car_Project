@@ -13,7 +13,7 @@ import android.widget.RadioGroup;
 import androidx.appcompat.app.AppCompatActivity;
 
 
-public class FeedbackActivity extends AppCompatActivity implements View.OnClickListener{
+public class FeedbackActivity extends AppCompatActivity {
 
     RadioGroup radioButtonGroup;
     RadioButton resultRadioButton;
@@ -36,26 +36,28 @@ public class FeedbackActivity extends AppCompatActivity implements View.OnClickL
         feedback = findViewById(R.id.feedbackID);
         radioButtonGroup = findViewById(R.id.radiogroupID);
         send = findViewById(R.id.sendID);
-        send.setOnClickListener(this);
+        send.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(v.getId()==R.id.sendID){
+                    String comment = feedback.getText().toString();
+
+
+                    if(comment.isEmpty()) {
+                        feedback.setError("Fill this field");
+                    }
+
+                    else {
+                        selectedID = radioButtonGroup.getCheckedRadioButtonId();
+                        resultRadioButton = (RadioButton) radioButtonGroup.findViewById(selectedID);
+                        message = resultRadioButton.getText().toString();
+                        //the code to save the user feedback to database, so will coming in phase 2
+                        feedback.setText(null);
+                    }
+                }
+            }
+        });
     }
 
-    @Override
-    public void onClick(View v) {
-        if(v.getId()==R.id.sendID){
-            String comment = feedback.getText().toString();
 
-            if(comment.isEmpty()) {
-                feedback.setError("Fill this field");
-            }
-
-            else {
-                selectedID = radioButtonGroup.getCheckedRadioButtonId();
-                resultRadioButton = (RadioButton) radioButtonGroup.findViewById(selectedID);
-                message = resultRadioButton.getText().toString();
-                //the code to save the user feedback to database, so will coming in phase 2
-                feedback.setText(null);
-            }
-        }
-
-    }
 }
