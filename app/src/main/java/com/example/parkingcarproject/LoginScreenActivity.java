@@ -49,7 +49,7 @@ public class LoginScreenActivity extends AppCompatActivity{
         signupPage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(type=="user"){
+                if(type.equals("user")){
                     Intent it = new Intent(LoginScreenActivity.this, SignUpActivity.class);
                     startActivity(it);
                 }else{
