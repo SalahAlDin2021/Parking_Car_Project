@@ -24,9 +24,9 @@ public class ProfileActivity extends AppCompatActivity {
         mEmailTextView = findViewById(R.id.email_text_view);
         mPasswordTextView = findViewById(R.id.password_text_view);
         mIdTextView = findViewById(R.id.id);
-        mEmailTextView.setText(MainActivity.email);
-        mPasswordTextView.setText(MainActivity.password);
-        mIdTextView.setText(MainActivity.id);
+        mEmailTextView.setText("Email: "+MainActivity.email);
+        mPasswordTextView.setText("Password: "+MainActivity.password);
+        mIdTextView.setText("ID: "+MainActivity.id);
     }
 
 }

@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -58,15 +59,21 @@ public class UserPageInAdminPanel extends AppCompatActivity {
     }
     private void setup(User user){
         id=findViewById(R.id.txt_user_id);
-        id.setText(user.getId());
+
+        Log.d("userr",user.toString());
+        Log.d("userr",user.toString());
+        Log.d("userr",user.toString());
+
+
+        id.setText(""+user.getId());
         pay_to_be_paid=findViewById(R.id.txt_user_amount_to_be_paid);
-        id.setText(""+(user.calculate_price_of_lots()-user.getPayAmount()));
+        pay_to_be_paid.setText(""+(user.calculate_price_of_lots()-user.getPayAmount()));
         username=findViewById(R.id.edt_user_name);
-        id.setText(user.getUsername());
+        username.setText(user.getUsername());
         email=findViewById(R.id.edt_user_email);
-        id.setText(user.getEmail());
+        email.setText(user.getEmail());
         password=findViewById(R.id.edt_user_password);
-        id.setText(user.getPassword());
+        password.setText(user.getPassword());
         pay_amount=findViewById(R.id.edt_user_pay_amount);
         btnEdit=findViewById(R.id.btn_edit);
     }

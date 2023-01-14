@@ -27,9 +27,11 @@ public class FindLotActivity extends AppCompatActivity {
         recycler = (RecyclerView)findViewById(R.id.my_recycler_view);
 
         ArrayList<Lot> lots =LotData.lots;
+        Log.d("messi",lots.toString());
         for(Lot lot:lots){
             lot.checkifEnd();
         }
+        Log.d("messi",lots.toString());
         recycler.setLayoutManager(new LinearLayoutManager(this));
         CaptionedImagesAdapter adapter = new CaptionedImagesAdapter(this,lots);
         recycler.setAdapter(adapter);

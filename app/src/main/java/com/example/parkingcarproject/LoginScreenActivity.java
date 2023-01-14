@@ -92,6 +92,10 @@ public class LoginScreenActivity extends AppCompatActivity{
                             String email = usernameEmail.getText().toString().trim();
                             String pass = password.getText().toString().trim();
                             if(!email.isEmpty() && !pass.isEmpty()){
+                                MainActivity.id=id+"";
+                                MainActivity.email=email+"";
+                                MainActivity.password=pass+"";
+                                MainActivity.type=type+"";
                                 editor.putString(ID, id+"");
                                 editor.putString(EMAIL,email);
                                 editor.putString(PASSWORD, pass);
@@ -106,13 +110,18 @@ public class LoginScreenActivity extends AppCompatActivity{
                         startActivity(it);
                         finish();
 
-                    }else if(id>0 && type.equals("admin")){
+                    }else if(id>0 && type.trim().equals("admin")){
                         if(!savedIns){
                             String email = usernameEmail.getText().toString().trim();
                             String pass = password.getText().toString().trim();
 
                             if(!email.isEmpty() && !pass.isEmpty()){
-                                editor.putString(ID, UserData.findUser(emailobj,passobj)+"");
+
+                                MainActivity.id=id+"";
+                                MainActivity.email=email+"";
+                                MainActivity.password=pass+"";
+                                MainActivity.type=type+"";
+                                editor.putString(ID, id+"");
                                 editor.putString(EMAIL,email);
                                 editor.putString(PASSWORD, pass);
                                 editor.putString(TYPE, "admin");
@@ -168,5 +177,6 @@ public class LoginScreenActivity extends AppCompatActivity{
         Intent it=getIntent();
         type=it.getStringExtra("type");
         txtType.setText(type+" Login");
+        Log.d("typee",type);
     }
 }

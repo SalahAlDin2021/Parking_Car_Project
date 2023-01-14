@@ -13,6 +13,7 @@ import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.parkingcarproject.model.AdminData;
 import com.example.parkingcarproject.model.LotData;
 import com.example.parkingcarproject.model.UserData;
 
@@ -71,6 +72,7 @@ public class MainActivity extends AppCompatActivity {
     }
     private void setup(){
         UserData u=new UserData();
+        AdminData d=new AdminData();
         LotData L=new LotData();
         txtv=findViewById(R.id.textView);
         imgv=findViewById(R.id.car);
